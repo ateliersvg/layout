@@ -1,0 +1,9 @@
+.frame             { fill: none; stroke: var(--color, currentColor); stroke-width: 2; opacity: .30; }
+.item              { fill: var(--color, currentColor); opacity: .16; }
+.accent            { fill: var(--accent, currentColor); }
+.dashed            { fill: none; stroke: var(--color, currentColor); stroke-width: 2; stroke-dasharray: 4 3; opacity: .45; }
+.dashed-accent     { fill: none; stroke: var(--accent, currentColor); stroke-width: 2; stroke-dasharray: 4 3; }
+.connection        { fill: none; stroke: var(--color, currentColor); stroke-width: 2; opacity: .55; }
+.connection-accent { fill: none; stroke: var(--accent, currentColor); stroke-width: 2; }
+.arrow             { fill: var(--accent, currentColor); }
+.label             { fill: var(--color, currentColor); opacity: .7; font: 6px sans-serif; }
