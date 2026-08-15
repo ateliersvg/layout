@@ -91,9 +91,9 @@ M 100 40 L 140 40 L 140 80 L 180 80
 
 If you already have solved rectangles, `ConnectionLabel::avoid()` skips occupied placements deterministically before falling back to the requested placement. See [Geometry](geometry/overview.md) for the `RectIndex` it takes.
 
-## What Links Between Boxes Do Not Do
+## Consumer Responsibilities
 
-This package does not currently solve:
+This package returns connection geometry. It does not provide:
 
 - graph ranking
 - obstacle avoidance
@@ -102,7 +102,7 @@ This package does not currently solve:
 - label collision avoidance
 - arrowhead drawing
 
-Those are still consumer responsibilities. A consumer takes the returned points and turns them into whatever its renderer draws.
+The consumer turns the returned points into the paths, arrowheads, and other marks its renderer draws.
 
 ## Demo
 

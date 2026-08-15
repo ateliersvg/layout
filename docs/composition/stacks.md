@@ -77,4 +77,4 @@ A spacer takes part in flex distribution exactly like `Frame::stretch()`, but ca
 
 ## Baseline Alignment
 
-`alignToBaseline()` aligns children on the first text baseline instead of the box edge. It only changes anything when the children expose a baseline, which today means ](../text blocks.
+`alignToBaseline()` aligns children on the first text baseline instead of the box edge. It affects children that expose a baseline, such as [`TextBlock`](../text.md); other children keep their top edge.
