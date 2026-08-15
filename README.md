@@ -141,8 +141,8 @@ A new public primitive needs exact numeric tests before a consumer depends on it
 Bug reports, security disclosures, and contribution guidelines are collected at
 [ateliersvg.com/support](https://ateliersvg.com/support/).
 
-Atelier is maintained by Simon André. Sharing the package or
-[starring it on GitHub](https://github.com/ateliersvg/layout) helps more than you would think.
+Sharing the package or [starring it on GitHub](https://github.com/ateliersvg/layout) helps more
+than you would think.
 
 ## License
 

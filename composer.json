@@ -3,7 +3,7 @@
     "description": "Renderer-agnostic spatial composition primitives: geometry, box constraints, grids, text layout, and links between boxes",
     "license": "MIT",
     "type": "library",
-    "homepage": "https://github.com/ateliersvg/layout",
+    "homepage": "https://ateliersvg.com/layout/",
     "keywords": [
         "layout",
         "spatial",
@@ -21,7 +21,8 @@
     "authors": [
         {
             "name": "Simon André",
-            "email": "smn.andre@gmail.com"
+            "email": "smn.andre@gmail.com",
+            "homepage": "https://smnandre.dev"
         }
     ],
     "minimum-stability": "stable",
@@ -53,10 +54,8 @@
         }
     },
     "scripts": {
-        "coverage": "vendor/bin/phpunit --coverage-text",
         "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff --sequential",
         "cs:fix": "vendor/bin/php-cs-fixer fix",
-        "docs:images": "php examples/illustrations.php",
         "qa": [
             "@cs",
             "@sa",
@@ -64,8 +63,5 @@
         ],
         "sa": "vendor/bin/phpstan analyse --memory-limit=-1",
         "test": "vendor/bin/phpunit"
-    },
-    "scripts-descriptions": {
-        "docs:images": "Regenerate the documentation figures into docs/images (requires the sibling atelier/svg checkout)"
     }
 }

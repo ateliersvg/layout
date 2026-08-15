@@ -79,20 +79,3 @@ Geometry helpers are pure values: they do not render, mutate, or depend on SVG.
 | draw an arrow between two boxes | [Connections](connections.md) |
 | wrap and measure a label | [Text And Inline Runs](text.md) |
 | build lanes, an axis strip, or a key | [Tracks, Bands And Legends](tracks-bands-legends.md) |
-
-## Demos
-
-The scripts in `examples/` are executable, small, and print concrete numbers, which makes solved geometry easy to inspect.
-
-```bash
-php examples/composition-demo.php
-php examples/connections-demo.php
-php examples/composition-gallery.php
-```
-
-`composition-demo.php` combines a fixed canvas, an outer margin, grid padding, row and column tracks, a spanning title slot, bottom-aligned text, bounds around two solved items, and a link between them.
-
-`connections-demo.php` isolates links between boxes, printing the source rect, the target rect, the connection points, the label point, and the final tangent for arrowheads.
-
-`composition-gallery.php` writes a dashboard, an overlay board, and a connections board as SVG. They are deliberately renderer-light: the script asks `atelier/layout` for geometry, then writes plain SVG elements from the solved frames. Which part is layout and which part is rendering stays visible.
-
