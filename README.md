@@ -1,13 +1,16 @@
-<h1 align="center">Atelier Layout</h1>
+<h1 align="center">
+  <img src=".github/atelier-layout.svg"
+       alt="Atelier Layout">
+</h1>
 
 <p align="center">Spatial primitives that answer where things go, and return geometry rather than markup.</p>
 
 <p align="center">
   <img alt="PHP Version" src="https://img.shields.io/badge/PHP-8.3%2B-f4a34b?labelColor=14141c">
+  <img alt="Version" src="https://img.shields.io/packagist/v/atelier/layout?label=Version&labelColor=14141c&color=f4a34b">
   <img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/ateliersvg/layout/CI.yml?branch=main&label=Tests&labelColor=14141c&color=f4a34b">
   <img alt="PHPUnit" src="https://img.shields.io/badge/PHPUnit-12-f4a34b?labelColor=14141c">
   <img alt="PHPStan" src="https://img.shields.io/badge/PHPStan-max-f4a34b?labelColor=14141c">
-  <img alt="Stable" src="https://img.shields.io/github/v/release/ateliersvg/layout?label=Stable&labelColor=14141c&color=f4a34b">
   <img alt="License" src="https://img.shields.io/github/license/ateliersvg/layout?label=License&labelColor=14141c&color=f4a34b">
 </p>
 
