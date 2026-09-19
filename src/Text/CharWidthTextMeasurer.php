@@ -6,6 +6,8 @@ namespace Atelier\Layout\Text;
 
 final class CharWidthTextMeasurer implements TextMeasurerInterface
 {
+    use WrapsText;
+
     private const int EM_UNITS = 1000;
     private const int FALLBACK_WIDTH = 556;
 
@@ -57,84 +59,5 @@ final class CharWidthTextMeasurer implements TextMeasurerInterface
             height: $this->heightFactor * $fontSize,
             ascent: $this->ascentFactor * $fontSize,
         );
-    }
-
-    public function wrap(string $text, float $maxWidth, float $fontSize, float $lineHeight = 1.2, bool $breakWords = false, FontWeight $weight = FontWeight::Normal): TextBlockMetrics
-    {
-        if ($maxWidth <= 0.0 || '' === trim($text)) {
-            return new TextBlockMetrics([], 0.0, 0.0, 0.0, 0.0);
-        }
-
-        $lines = [];
-        $current = '';
-        $words = preg_split('/(\s+)/', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
-        assert(false !== $words);
-
-        foreach ($words as $word) {
-            $candidate = $current.$word;
-            if ($this->measureLine($candidate, $fontSize, $weight)->width <= $maxWidth || '' === $current) {
-                if ($this->measureLine($candidate, $fontSize, $weight)->width <= $maxWidth || !$breakWords) {
-                    $current = $candidate;
-                    continue;
-                }
-            }
-
-            if ('' !== trim($current)) {
-                $lines[] = trim($current);
-            }
-            $current = preg_match('/^\s+$/', $word) ? '' : $word;
-        }
-
-        if ('' !== trim($current)) {
-            $lines[] = trim($current);
-        }
-
-        if ($breakWords) {
-            $lines = $this->breakLongLines($lines, $maxWidth, $fontSize, $weight);
-        }
-
-        $maxLineWidth = 0.0;
-        foreach ($lines as $line) {
-            $maxLineWidth = max($maxLineWidth, $this->measureLine($line, $fontSize, $weight)->width);
-        }
-
-        $lineBoxHeight = $fontSize * $lineHeight;
-        $firstBaseline = $this->ascentFactor * $fontSize;
-        $lastBaseline = [] === $lines ? 0.0 : $firstBaseline + (\count($lines) - 1) * $lineBoxHeight;
-
-        return new TextBlockMetrics(
-            lines: $lines,
-            width: $maxLineWidth,
-            height: \count($lines) * $lineBoxHeight,
-            firstBaseline: $firstBaseline,
-            lastBaseline: $lastBaseline,
-        );
-    }
-
-    /**
-     * @param list<string> $lines
-     *
-     * @return list<string>
-     */
-    private function breakLongLines(array $lines, float $maxWidth, float $fontSize, FontWeight $weight): array
-    {
-        $result = [];
-        foreach ($lines as $line) {
-            $current = '';
-            foreach (mb_str_split($line) as $char) {
-                $candidate = $current.$char;
-                if ('' !== $current && $this->measureLine($candidate, $fontSize, $weight)->width > $maxWidth) {
-                    $result[] = $current;
-                    $current = $char;
-                    continue;
-                }
-                $current = $candidate;
-            }
-            if ('' !== $current) {
-                $result[] = $current;
-            }
-        }
-
-        return $result;
     }
 }
