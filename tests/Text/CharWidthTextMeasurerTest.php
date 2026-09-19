@@ -6,10 +6,13 @@ namespace Atelier\Layout\Tests\Text;
 
 use Atelier\Layout\Text\CharWidthTextMeasurer;
 use Atelier\Layout\Text\FontWeight;
+use Atelier\Layout\Text\WrapsText;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesTrait;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(CharWidthTextMeasurer::class)]
+#[UsesTrait(WrapsText::class)]
 #[CoversClass(FontWeight::class)]
 final class CharWidthTextMeasurerTest extends TestCase
 {
