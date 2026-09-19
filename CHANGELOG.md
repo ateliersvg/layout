@@ -2,7 +2,7 @@
 
 Public API and behaviour changes only. Versions follow Semantic Versioning.
 
-## Unreleased
+## 0.8.0 - 2026-09-19
 
 ### Added
 
